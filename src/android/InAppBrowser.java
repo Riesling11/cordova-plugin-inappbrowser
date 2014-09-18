@@ -86,7 +86,10 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String CLEAR_ALL_CACHE = "clearcache";
     private static final String CLEAR_SESSION_CACHE = "clearsessioncache";
     private static final String HARDWARE_BACK_BUTTON = "hardwareback";
+<<<<<<< HEAD
     private static final String MEDIA_PLAYBACK_REQUIRES_USER_ACTION = "mediaPlaybackRequiresUserAction";
+=======
+>>>>>>> recognize hardware-backbutton + use parent ua string
 
     private InAppBrowserDialog dialog;
     private WebView inAppWebView;
@@ -95,10 +98,17 @@ public class InAppBrowser extends CordovaPlugin {
     private boolean showLocationBar = true;
     private boolean showZoomControls = true;
     private boolean openWindowHidden = false;
+<<<<<<< HEAD
     private boolean clearAllCache = false;
     private boolean clearSessionCache = false;
     private boolean hadwareBackButton = true;
     private boolean mediaPlaybackRequiresUserGesture = false;
+=======
+    private String buttonLabel = "Done";
+    private boolean clearAllCache= false;
+    private boolean clearSessionCache=false;
+    private boolean hardwareBackButton=true;
+>>>>>>> recognize hardware-backbutton + use parent ua string
 
     /**
      * Executes the request and returns PluginResult.
@@ -422,7 +432,11 @@ public class InAppBrowser extends CordovaPlugin {
      * @return boolean
      */
     public boolean hardwareBack() {
+<<<<<<< HEAD
         return hadwareBackButton;
+=======
+        return hardwareBackButton;
+>>>>>>> recognize hardware-backbutton + use parent ua string
     }
 
     /**
@@ -493,11 +507,15 @@ public class InAppBrowser extends CordovaPlugin {
             }
             Boolean hardwareBack = features.get(HARDWARE_BACK_BUTTON);
             if (hardwareBack != null) {
+<<<<<<< HEAD
                 hadwareBackButton = hardwareBack.booleanValue();
             }
             Boolean mediaPlayback = features.get(MEDIA_PLAYBACK_REQUIRES_USER_ACTION);
             if (mediaPlayback != null) {
                 mediaPlaybackRequiresUserGesture = mediaPlayback.booleanValue();
+=======
+                hardwareBackButton = hardwareBack.booleanValue();
+>>>>>>> recognize hardware-backbutton + use parent ua string
             }
             Boolean cache = features.get(CLEAR_ALL_CACHE);
             if (cache != null) {
@@ -668,6 +686,7 @@ public class InAppBrowser extends CordovaPlugin {
                 settings.setJavaScriptCanOpenWindowsAutomatically(true);
                 settings.setBuiltInZoomControls(showZoomControls);
                 settings.setPluginState(android.webkit.WebSettings.PluginState.ON);
+                settings.setUserAgentString(thatWebView.getSettings().getUserAgentString());
 
                 if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
                     settings.setMediaPlaybackRequiresUserGesture(mediaPlaybackRequiresUserGesture);
