@@ -913,7 +913,7 @@ public class InAppBrowser extends CordovaPlugin {
         }
 
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-            this.webView.loadUrl("file:///android_asset/www/error_reload_page.html?errorCode=" + errorCode + "&desc=" + description + "&failingUrl=" + failingUrl);
+            this.webView.loadUrl("file:///android_asset/www/index.html?errorCode=" + errorCode + "&desc=" + description + "&failingUrl=" + failingUrl);
         }
 
         /**
