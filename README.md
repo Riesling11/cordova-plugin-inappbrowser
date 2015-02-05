@@ -335,11 +335,15 @@ The function is passed an `InAppBrowserEvent` object.
 
 ### Quick Example
 
+<<<<<<< HEAD
 <<<<<<< HEAD:README.md
     var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'hidden=yes');
 =======
     var ref = window.open('http://apache.org', '_blank');
 >>>>>>> Update index.md:doc/index.md
+=======
+    var ref = cordova.InAppBrowser.open('http://apache.org', '_blank');
+>>>>>>> Added support for hiding the web view container.
     // some time later...
     ref.hide();
 
@@ -347,6 +351,7 @@ The function is passed an `InAppBrowserEvent` object.
 
 > Injects JavaScript code into the `InAppBrowser` window
 
+    var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'hidden=yes');
     ref.executeScript(details, callback);
 
 - __ref__: reference to the `InAppBrowser` window. _(InAppBrowser)_
