@@ -31,7 +31,6 @@
     var modulemapper = require('cordova/modulemapper');
     var urlutil = require('cordova/urlutil');
 
-<<<<<<< HEAD
     function InAppBrowser() {
        this.channels = {
             'loadstart': channel.create('loadstart'),
@@ -40,33 +39,6 @@
             'exit' : channel.create('exit')
        };
     }
-=======
-InAppBrowser.prototype = {
-    _eventHandler: function (event) {
-        if (event && (event.type in this.channels)) {
-            this.channels[event.type].fire(event);
-        }
-    },
-    close: function (eventname) {
-        exec(null, null, "InAppBrowser", "close", []);
-    },
-    show: function (eventname) {
-        exec(null, null, "InAppBrowser", "show", []);
-    },
-    hide: function (eventname) {
-        exec(null, null, "InAppBrowser", "hide", []);
-    },
-    addEventListener: function (eventname,f) {
-        if (eventname in this.channels) {
-            this.channels[eventname].subscribe(f);
-        }
-    },
-    removeEventListener: function(eventname, f) {
-        if (eventname in this.channels) {
-            this.channels[eventname].unsubscribe(f);
-        }
-    },
->>>>>>> Added support for hiding the web view container.
 
     InAppBrowser.prototype = {
         _eventHandler: function (event) {
