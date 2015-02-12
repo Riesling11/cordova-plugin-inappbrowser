@@ -195,6 +195,7 @@ The object returned from a call to `cordova.InAppBrowser.open`.
 - removeEventListener
 - close
 - show
+- hide
 - executeScript
 - insertCSS
 
@@ -316,6 +317,21 @@ The function is passed an `InAppBrowserEvent` object.
 - iOS
 - Windows 8 and 8.1
 - Browser
+
+## hide
+
+> Hides the InAppBrowser window. Calling this has no effect if the InAppBrowser was already hidden.
+
+    ref.hide();
+
+- __ref__: reference to the InAppBrowser window (`InAppBrowser`)
+
+### Supported Platforms
+
+- Amazon Fire OS
+- Android
+- iOS
+- Windows 8 and 8.1
 
 ### Quick Example
 
