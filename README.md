@@ -335,9 +335,13 @@ The function is passed an `InAppBrowserEvent` object.
 
 ### Quick Example
 
+<<<<<<< HEAD:README.md
     var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'hidden=yes');
+=======
+    var ref = window.open('http://apache.org', '_blank');
+>>>>>>> Update index.md:doc/index.md
     // some time later...
-    ref.show();
+    ref.hide();
 
 ## executeScript
 
