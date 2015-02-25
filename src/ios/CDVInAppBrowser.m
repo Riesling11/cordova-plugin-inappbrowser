@@ -137,7 +137,9 @@
     }
 
     if (self.inAppBrowserViewController == nil) {
-        NSString* originalUA = [CDVUserAgentUtil originalUserAgent];
+        NSString* suffixUA = @" YalwApp/bL.%%VERSION%%";
+        NSString* originalUAtemp = [CDVUserAgentUtil originalUserAgent];
+        NSString* originalUA = [originalUAtemp stringByAppendingString:suffixUA];
         self.inAppBrowserViewController = [[CDVInAppBrowserViewController alloc] initWithUserAgent:originalUA prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
         self.inAppBrowserViewController.navigationDelegate = self;
 
