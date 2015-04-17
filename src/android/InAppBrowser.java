@@ -694,7 +694,6 @@ public class InAppBrowser extends CordovaPlugin {
                 if (appendUserAgent != null) {
                     settings.setUserAgentString(settings.getUserAgentString() + appendUserAgent);
                 }
-
                 //Toggle whether this is enabled or not!
                 Bundle appSettings = cordova.getActivity().getIntent().getExtras();
                 boolean enableDatabase = appSettings == null ? true : appSettings.getBoolean("InAppBrowserStorageEnabled", true);
