@@ -50,18 +50,11 @@
             exec(null, null, "InAppBrowser", "close", []);
         },
         show: function (eventname) {
-<<<<<<< HEAD
-			exec(null, null, "InAppBrowser", "show", []);
-=======
             exec(null, null, "InAppBrowser", "show", []);
         },
         hide: function (eventname) {
             exec(null, null, "InAppBrowser", "hide", []);
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
         },
-		 hide: function (eventname) {
-			exec(null, null, "InAppBrowser", "hide", []);
-		},
         addEventListener: function (eventname,f) {
             if (eventname in this.channels) {
                 this.channels[eventname].subscribe(f);

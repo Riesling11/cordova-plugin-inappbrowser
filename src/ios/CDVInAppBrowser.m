@@ -142,12 +142,6 @@
     }
 
     if (self.inAppBrowserViewController == nil) {
-<<<<<<< HEAD
-        NSString* suffixUA = @" YalwApp/bL.%%VERSION%%";
-        NSString* originalUAtemp = [CDVUserAgentUtil originalUserAgent];
-        NSString* originalUA = [originalUAtemp stringByAppendingString:suffixUA];
-        self.inAppBrowserViewController = [[CDVInAppBrowserViewController alloc] initWithUserAgent:originalUA prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
-=======
         NSString* userAgent = [CDVUserAgentUtil originalUserAgent];
         NSString* overrideUserAgent = [self settingForKey:@"OverrideUserAgent"];
         NSString* appendUserAgent = [self settingForKey:@"AppendUserAgent"];
@@ -158,7 +152,6 @@
             userAgent = [userAgent stringByAppendingString: appendUserAgent];
         }
         self.inAppBrowserViewController = [[CDVInAppBrowserViewController alloc] initWithUserAgent:userAgent prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
         self.inAppBrowserViewController.navigationDelegate = self;
 
         if ([self.viewController conformsToProtocol:@protocol(CDVScreenOrientationDelegate)]) {
@@ -1052,17 +1045,10 @@ return;
 @implementation CDVInAppBrowserNavigationController : UINavigationController
 
 - (void) dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
-<<<<<<< HEAD
-     if ( self.presentedViewController) {
-         [super dismissViewControllerAnimated:flag completion:completion];
-     }
- }
-=======
     if ( self.presentedViewController) {
         [super dismissViewControllerAnimated:flag completion:completion];
     }
 }
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
 
 - (void) viewDidLoad {
 

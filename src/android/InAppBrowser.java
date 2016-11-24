@@ -86,12 +86,8 @@ public class InAppBrowser extends CordovaPlugin {
     private static final String CLEAR_SESSION_CACHE = "clearsessioncache";
     private static final String HARDWARE_BACK_BUTTON = "hardwareback";
     private static final String MEDIA_PLAYBACK_REQUIRES_USER_ACTION = "mediaPlaybackRequiresUserAction";
-<<<<<<< HEAD
-    private static final String USER_WIDE_VIEW_PORT = "useWideViewPort";
-=======
     private static final String SHOULD_PAUSE = "shouldPauseOnSuspend";
     private static final Boolean DEFAULT_HARDWARE_BACK = true;
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
 
     private InAppBrowserDialog dialog;
     private WebView inAppWebView;
@@ -104,11 +100,8 @@ public class InAppBrowser extends CordovaPlugin {
     private boolean clearSessionCache = false;
     private boolean hadwareBackButton = true;
     private boolean mediaPlaybackRequiresUserGesture = false;
-<<<<<<< HEAD
     private boolean useWideViewPort = true;
-=======
     private boolean shouldPauseInAppBrowser = false;
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
 
     /**
      * Executes the request and returns PluginResult.
@@ -558,15 +551,9 @@ public class InAppBrowser extends CordovaPlugin {
                     clearSessionCache = cache.booleanValue();
                 }
             }
-<<<<<<< HEAD
-            Boolean wideViewPort = features.get(USER_WIDE_VIEW_PORT);
-            if (wideViewPort != null ) {
-		useWideViewPort = wideViewPort.booleanValue();	
-=======
             Boolean shouldPause = features.get(SHOULD_PAUSE);
             if (shouldPause != null) {
                 shouldPauseInAppBrowser = shouldPause.booleanValue();
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
             }
         }
 
@@ -977,23 +964,7 @@ public class InAppBrowser extends CordovaPlugin {
         }
 
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-<<<<<<< HEAD
             this.webView.loadUrl("file:///android_asset/www/html/main.html?errorCode=" + errorCode + "&desc=" + description + "&failingUrl=" + failingUrl);
-=======
-            super.onReceivedError(view, errorCode, description, failingUrl);
-
-            try {
-                JSONObject obj = new JSONObject();
-                obj.put("type", LOAD_ERROR_EVENT);
-                obj.put("url", failingUrl);
-                obj.put("code", errorCode);
-                obj.put("message", description);
-
-                sendUpdate(obj, true, PluginResult.Status.ERROR);
-            } catch (JSONException ex) {
-                LOG.d(LOG_TAG, "Should never happen");
-            }
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
         }
 
         /**
