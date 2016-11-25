@@ -757,7 +757,6 @@ public class InAppBrowser extends CordovaPlugin {
                 inAppWebView.loadUrl(url);
                 inAppWebView.setId(Integer.valueOf(6));
                 inAppWebView.getSettings().setLoadWithOverviewMode(true);
-                inAppWebView.getSettings().setUseWideViewPort(useWideViewPort);
                 inAppWebView.requestFocus();
                 inAppWebView.requestFocusFromTouch();
 
