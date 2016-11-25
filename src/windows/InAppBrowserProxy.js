@@ -123,19 +123,11 @@ var IAB = {
             browserWrap.style.display = "none";
         }
     },
-<<<<<<< HEAD
     hide: function (win, lose) {
         if (browserWrap) {
             browserWrap.style.display = "none";
         }
     },
-    hide: function (win, lose) {
-        if (browserWrap) {
-            browserWrap.style.display = "none";
-        }
-    },
-=======
->>>>>>> 1b4859c17520fc3637e0854c260539c7a7858c78
     open: function (win, lose, args) {
         // make function async so that we can add navigation events handlers before view is loaded and navigation occured
         setImmediate(function () {
